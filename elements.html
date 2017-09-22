@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>진료과로 검색하기</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/framework.css">
+  <link rel="stylesheet" type="text/css" href="css/washington.css">
+  <script src="js/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ["Montserrat:400,700"]
+      }
+    });
+  </script>
+  <script type="text/javascript" src="js/modernizr.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="images/logoStandford32.ico">
+  <link rel="apple-touch-icon" href="images/logoStandford32.ico">
+
+  <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body ng-app="medicalApp" ng-controller="medicalCtrl">
+  <section class="w-section mobile-wrapper">
+
+    <div class="page-content" id="main-stack">
+      <div class="w-nav navbar" data-collapse="all" data-animation="over-left" data-duration="400" data-contain="1" data-no-scroll="1" data-easing="ease-out-quint">
+        <div class="w-container">
+          <nav class="w-nav-menu nav-menu" role="navigation">
+            <div class="nav-menu-header">
+              <div class="logo">CDSS</div>
+            </div>
+            <a class="w-clearfix w-inline-block nav-menu-link" href="home.html">
+              <div class="icon-list-menu">
+                <div class="icon ion-ios-home-outline"></div>
+              </div>
+              <div class="nav-menu-titles">홈</div>
+            </a>
+            <a class="w-clearfix w-inline-block nav-menu-link" href="signup.html">
+              <div class="icon-list-menu">
+                <div class="icon ion-ios-cloud-upload-outline"></div>
+              </div>
+              <div class="nav-menu-titles">환자정보</div>
+            </a>
+            <a class="w-clearfix w-inline-block nav-menu-link" href="search.html">
+              <div class="icon-list-menu">
+                <div class="icon ion-ios-list-outline"></div>
+              </div>
+              <div class="nav-menu-titles">증상으로 검색하기</div>
+            </a>
+            <a class="w-clearfix w-inline-block nav-menu-link" href="search.html">
+              <div class="icon-list-menu">
+                <div class="icon ion-ios-checkmark-outline"></div>
+              </div>
+              <div class="nav-menu-titles">질환으로 검색하기</div>
+            </a>
+            <a class="w-clearfix w-inline-block nav-menu-link" href="elements.html">
+              <div class="icon-list-menu">
+                <div class="icon ion-ios-albums-outline"></div>
+              </div>
+              <div class="nav-menu-titles">진료과로 검색하기</div>
+            </a>
+            <a class="w-clearfix w-inline-block nav-menu-link" href="gradelist.html">
+              <div class="icon-list-menu">
+                <div class="icon ion-ios-box-outline"></div>
+              </div>
+              <div class="nav-menu-titles">권고등급 체계</div>
+            </a>
+            <a class="w-clearfix w-inline-block nav-menu-link" href="alllist.html">
+              <div class="icon-list-menu">
+                <div class="icon ion-ios-bookmarks-outline"></div>
+              </div>
+              <div class="nav-menu-titles">종합근거 수준</div>
+            </a>
+            <a class="w-clearfix w-inline-block nav-menu-link" href="raylist.html">
+              <div class="icon-list-menu">
+                <div class="icon ion-ios-compose-outline"></div>
+              </div>
+              <div class="nav-menu-titles">방사선량 수준</div>
+            </a>
+          </nav>
+
+
+
+          <div class="wrapper-mask" data-ix="menu-mask"></div>
+          <div class="navbar-title">진료과로 검색하기</div>
+          <div class="w-nav-button navbar-button left" id="menu-button" data-ix="hide-navbar-icons">
+            <div class="navbar-button-icon home-icon">
+              <div class="bar-home-icon"></div>
+              <div class="bar-home-icon"></div>
+              <div class="bar-home-icon"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="body">
+        <div class="news-container item-new">
+          <div>
+          
+            <div class="text-new no-borders">
+
+              <div>
+                <div class="separator-fields"></div>
+                <div class="w-tabs" data-duration-in="300" data-duration-out="100">
+                  <div class="w-tab-content tabs-content">
+                    <div class="w-tab-pane w--tab-active w-clearfix tab-pane" data-w-tab="Tab 1">
+                      <div class="group-block">
+                        <a class="w-inline-block" ng-click="go_jin('신경 두경부')">
+                          <div class="group-image"></div>
+                          <div class="group-title">
+                            <div class="title-text">신경 두경부</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="group-block last">
+                        <a class="w-inline-block" ng-click="go_jin('갑상선')">
+                          <div class="group-image bg1"></div>
+                          <div class="group-title">
+                            <div class="title-text">갑상선</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="group-block">
+                        <a class="w-inline-block" ng-click="go_jin('흉부')">
+                          <div class="group-image bg2"></div>
+                          <div class="group-title">
+                            <div class="title-text">흉부</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="group-block last">
+                        <a class="w-inline-block" ng-click="go_jin('심장')">
+                          <div class="group-image bg3"></div>
+                          <div class="group-title">
+                            <div class="title-text">심장</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="group-block last">
+                        <a class="w-inline-block" ng-click="go_jin('유방')">
+                          <div class="group-image bg4"></div>
+                          <div class="group-title">
+                            <div class="title-text">유방</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="group-block last">
+                        <a class="w-inline-block" ng-click="go_jin('복부')">
+                          <div class="group-image bg5"></div>
+                          <div class="group-title">
+                            <div class="title-text">복부</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="group-block last">
+                        <a class="w-inline-block" ng-click="go_jin('비뇨')">
+                          <div class="group-image bg6"></div>
+                          <div class="group-title">
+                            <div class="title-text">비뇨</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="group-block last">
+                        <a class="w-inline-block" ng-click="go_jin('근골격')">
+                          <div class="group-image bg7"></div>
+                          <div class="group-title">
+                            <div class="title-text">근골격</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="group-block last">
+                        <a class="w-inline-block" ng-click="go_jin('인터벤션')">
+                          <div class="group-image bg8"></div>
+                          <div class="group-title">
+                            <div class="title-text">인터벤션</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="group-block last">
+                        <a class="w-inline-block" ng-click="go_jin('소아')">
+                          <div class="group-image bg9"></div>
+                          <div class="group-title">
+                            <div class="title-text">소아</div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  
+                </div>
+               
+              
+              </div>
+            </div>
+          
+            
+            
+            
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-content loading-mask" id="new-stack">
+      <div class="loading-icon">
+        <div class="navbar-button-icon icon ion-load-d"></div>
+      </div>
+    </div>
+    <div class="shadow-layer"></div>
+  </section>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/framework.js"></script>
+  <!--[if lte IE 9]><script src="js/placeholders.min.js"></script><![endif]-->
+
+
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/framework.js"></script>
+
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+  <!-- AngularFire -->
+  <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+  <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDuONvOPBwxzh6xxLi4IEdxWeXXYus85RU",
+        authDomain: "cdss-f1075.firebaseapp.com",
+        databaseURL: "https://cdss-f1075.firebaseio.com",
+        projectId: "cdss-f1075",
+        storageBucket: "cdss-f1075.appspot.com",
+        messagingSenderId: "1076733407332"
+      };
+      firebase.initializeApp(config);
+  </script>
+
+
+  <script src="js/app.js"></script>
+  <script src="js/controller.js"></script>
+  <script src="js/service.js"></script>
+
+</body>
+</html>
